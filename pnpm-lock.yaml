@@ -6,13 +6,13 @@ specifiers:
   '@electron-forge/maker-rpm': ^6.0.0-beta.61
   '@electron-forge/maker-squirrel': ^6.0.0-beta.61
   '@electron-forge/maker-zip': ^6.0.0-beta.61
+  '@xmldom/xmldom': ^0.8.0
   electron: 11.5.0
   electron-squirrel-startup: ^1.0.0
-  xmldom: ^0.6.0
 
 dependencies:
+  '@xmldom/xmldom': 0.8.0
   electron-squirrel-startup: 1.0.0
-  xmldom: 0.6.0
 
 devDependencies:
   '@electron-forge/cli': 6.0.0-beta.61
@@ -484,6 +484,11 @@ packages:
       '@types/node': 17.0.8
     dev: true
     optional: true
+
+  /@xmldom/xmldom/0.8.0:
+    resolution: {integrity: sha512-7wVnF+rKrVDEo1xjzkkidTG0grclaVnX0vKa0z9JSXcEdtftUJjvU33jLGg6SHyvs3eeqEsI7jZ6NxYfRypEEg==}
+    engines: {node: '>=10.0.0'}
+    dev: false
 
   /abbrev/1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -3706,11 +3711,6 @@ packages:
     resolution: {integrity: sha1-Ey7mPS7FVlxVfiD0wi35rKaGsQ0=}
     engines: {node: '>=4.0'}
     dev: true
-
-  /xmldom/0.6.0:
-    resolution: {integrity: sha512-iAcin401y58LckRZ0TkI4k0VSM1Qg0KGSc3i8rU+xrxe19A/BN1zHyVSJY7uoutVlaTSzYyk/v5AmkewAP7jtg==}
-    engines: {node: '>=10.0.0'}
-    dev: false
 
   /xtend/2.1.2:
     resolution: {integrity: sha1-bv7MKk2tjmlixJAbM3znuoe10os=}
