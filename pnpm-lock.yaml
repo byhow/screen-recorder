@@ -20,8 +20,8 @@ devDependencies:
     specifier: ^6.0.0-beta.63
     version: 6.0.0-beta.63
   '@electron-forge/maker-deb':
-    specifier: ^6.0.0-beta.63
-    version: 6.0.0-beta.63
+    specifier: ^7.0.0
+    version: 7.1.0
   '@electron-forge/maker-rpm':
     specifier: ^7.0.0
     version: 7.0.0
@@ -333,15 +333,28 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-deb@6.0.0-beta.63:
-    resolution: {integrity: sha512-6U4SQ9qFqd0UPCTfJU6358ifxnLvMxJmwyy3Z/4lZlYIfL2112gsQRyvlv7UcFXamw+1CZ9n9SY3f/K50susEQ==}
-    engines: {node: '>= 12.13.0'}
+  /@electron-forge/maker-base@7.1.0:
+    resolution: {integrity: sha512-W+u8y2D30vhY1xnX3g5cuwsbUV+W5zLR/I8XSfHNofu6+/LOjI2Mu9y0C/pLOMrnVbt1+F9MkxxmLNt0TRlAjg==}
+    engines: {node: '>= 16.4.0'}
     dependencies:
-      '@electron-forge/maker-base': 6.0.0-beta.63
-      '@electron-forge/shared-types': 6.0.0-beta.63
-    optionalDependencies:
-      electron-installer-debian: 3.1.0
+      '@electron-forge/shared-types': 7.1.0
+      fs-extra: 10.1.0
+      which: 2.0.2
     transitivePeerDependencies:
+      - enquirer
+      - supports-color
+    dev: true
+
+  /@electron-forge/maker-deb@7.1.0:
+    resolution: {integrity: sha512-ztuxwThdwgGebl5VqlaFoT6CnetJgaGlxxxyptN6B5eUW0+7HvumgqnIYEmiOLwvnC8tHpFpQjWNYZe/BDGK9Q==}
+    engines: {node: '>= 16.4.0'}
+    dependencies:
+      '@electron-forge/maker-base': 7.1.0
+      '@electron-forge/shared-types': 7.1.0
+    optionalDependencies:
+      electron-installer-debian: 3.2.0
+    transitivePeerDependencies:
+      - enquirer
       - supports-color
     dev: true
 
@@ -428,6 +441,19 @@ packages:
       - supports-color
     dev: true
 
+  /@electron-forge/shared-types@7.1.0:
+    resolution: {integrity: sha512-uKCrWrgNCwwZB1DUBwo4/YyqLQNL55/X9xWhOT1dyw8W1wQ/bxD33F73FYNdmoL6qgIywWGNRLdQ4e1YaSxnvg==}
+    engines: {node: '>= 16.4.0'}
+    dependencies:
+      '@electron-forge/tracer': 7.1.0
+      '@electron/packager': 18.0.0
+      '@electron/rebuild': 3.3.0
+      listr2: 5.0.8
+    transitivePeerDependencies:
+      - enquirer
+      - supports-color
+    dev: true
+
   /@electron-forge/template-base@6.0.0-beta.63:
     resolution: {integrity: sha512-u1rPlrc8bqajkiKe2tmGROL9/o0xx8OzMBHsT7i2+oAFPicSZoyrELCxx9htCeLgUf0iR0K0EzLsFjdyRjTBkg==}
     engines: {node: '>= 12.13.0'}
@@ -480,6 +506,13 @@ packages:
 
   /@electron-forge/tracer@7.0.0:
     resolution: {integrity: sha512-28j4GC7I06r0TpTVWbenvPXqcvfUp+8FVizFxETuUjd24sp8UgZGI+v1AVSqmsrknoHsFuZuCMb9U08Fq/kcRQ==}
+    engines: {node: '>= 14.17.5'}
+    dependencies:
+      chrome-trace-event: 1.0.3
+    dev: true
+
+  /@electron-forge/tracer@7.1.0:
+    resolution: {integrity: sha512-e3nWweJpWeFS7usi5d9GEEXiw38qreNz46I+yb4klNC/IPt8Xmmh2VsgUvuld8N9HcJ4eCU9CPLGjkeRQr9RiA==}
     engines: {node: '>= 14.17.5'}
     dependencies:
       chrome-trace-event: 1.0.3
@@ -1390,13 +1423,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /camelcase@5.3.1:
-    resolution: {integrity: sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==}
-    engines: {node: '>=6'}
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /caseless@0.12.0:
     resolution: {integrity: sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw==}
     dev: true
@@ -1478,16 +1504,6 @@ packages:
     resolution: {integrity: sha512-FxqpkPPwu1HjuN93Omfm4h8uIanXofW0RxVEW3k5RKx+mJJYSthzNhp32Kzxxy3YAEZ/Dc/EWN1vZRY0+kOhbw==}
     engines: {node: '>= 10'}
     dev: true
-
-  /cliui@6.0.0:
-    resolution: {integrity: sha512-t6wbgtoCXvAzst7QgXxJYqPt0usEfbgQdftEPbLL/cvv6HPE5VgvqCuAIDR0NgU52ds6rFwqrgakNLrHEjCbrQ==}
-    requiresBuild: true
-    dependencies:
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
-      wrap-ansi: 6.2.0
-    dev: true
-    optional: true
 
   /cliui@7.0.4:
     resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}
@@ -1676,13 +1692,6 @@ packages:
       ms: 2.1.2
     dev: true
 
-  /decamelize@1.2.0:
-    resolution: {integrity: sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==}
-    engines: {node: '>=0.10.0'}
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /decompress-response@3.3.0:
     resolution: {integrity: sha512-BzRPQuY1ip+qDonAOz42gRm/pg9F768C+npV/4JOsxRC2sq+Rlk+Q4ZCAsOhnIaMrgarILY+RMUIvMmmX1qAEA==}
     engines: {node: '>=4'}
@@ -1845,8 +1854,8 @@ packages:
     dev: true
     optional: true
 
-  /electron-installer-debian@3.1.0:
-    resolution: {integrity: sha512-k6KChvx0Fw8XTlCqwwbBfh19yGQaKjGdbugokmr1IpzINOm4QFyACKMTHAYFHW5LCBUZQShZD96hwxUZ+8Kx+w==}
+  /electron-installer-debian@3.2.0:
+    resolution: {integrity: sha512-58ZrlJ1HQY80VucsEIG9tQ//HrTlG6sfofA3nRGr6TmkX661uJyu4cMPPh6kXW+aHdq/7+q25KyQhDrXvRL7jw==}
     engines: {node: '>= 10.0.0'}
     os: [darwin, linux]
     hasBin: true
@@ -1859,7 +1868,7 @@ packages:
       get-folder-size: 2.0.1
       lodash: 4.17.21
       word-wrap: 1.2.5
-      yargs: 15.4.1
+      yargs: 16.2.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4678,12 +4687,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /require-main-filename@2.0.0:
-    resolution: {integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==}
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /resolve-alpn@1.2.1:
     resolution: {integrity: sha512-0a1F4l73/ZFZOakJnQ3FvkJ2+gSTQWz/r2KE5OdDY0TxPm5h4GkqkWWfM47T7HsbnOtcJVEF4epCVy6u7Q3K+g==}
     dev: true
@@ -5236,7 +5239,7 @@ packages:
     dev: true
 
   /tiny-each-async@2.0.3:
-    resolution: {integrity: sha1-jru/1tYpXxNwAD+7NxYq/loKUdE=}
+    resolution: {integrity: sha512-5ROII7nElnAirvFn8g7H7MtpfV1daMcyfTGQwsn/x2VtyV+VPiO5CjReCJtWLvoKTDEDmZocf3cNPraiMnBXLA==}
     requiresBuild: true
     dev: true
     optional: true
@@ -5529,12 +5532,6 @@ packages:
       is-symbol: 1.0.4
     dev: true
 
-  /which-module@2.0.1:
-    resolution: {integrity: sha512-iBdZ57RDvnOR9AGBhML2vFZf7h8vmBjhoaZqODJBFWHVtKkDmKuHai3cx5PgVMrX5YDNp27AofYbAwctSS+vhQ==}
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /which-typed-array@1.1.11:
     resolution: {integrity: sha512-qe9UWWpkeG5yzZ0tNYxDmd7vo58HDBc39mZ0xWWpolAGADdFOzkfamWLDxkOWcvHQKVmdTyQdLD4NOfjLWTKew==}
     engines: {node: '>= 0.4'}
@@ -5619,12 +5616,6 @@ packages:
       object-keys: 0.4.0
     dev: true
 
-  /y18n@4.0.3:
-    resolution: {integrity: sha512-JKhqTOwSrqNA1NY5lSztJ1GrBiUodLMmIZuLiDaMRJ+itFd+ABVE8XBjOvIWL+rSqNDC74LCSFmlb/U4UZ4hJQ==}
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /y18n@5.0.8:
     resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
     engines: {node: '>=10'}
@@ -5648,16 +5639,6 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /yargs-parser@18.1.3:
-    resolution: {integrity: sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==}
-    engines: {node: '>=6'}
-    requiresBuild: true
-    dependencies:
-      camelcase: 5.3.1
-      decamelize: 1.2.0
-    dev: true
-    optional: true
-
   /yargs-parser@20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}
     engines: {node: '>=10'}
@@ -5667,25 +5648,6 @@ packages:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
     engines: {node: '>=12'}
     dev: true
-
-  /yargs@15.4.1:
-    resolution: {integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==}
-    engines: {node: '>=8'}
-    requiresBuild: true
-    dependencies:
-      cliui: 6.0.0
-      decamelize: 1.2.0
-      find-up: 4.1.0
-      get-caller-file: 2.0.5
-      require-directory: 2.1.1
-      require-main-filename: 2.0.0
-      set-blocking: 2.0.0
-      string-width: 4.2.3
-      which-module: 2.0.1
-      y18n: 4.0.3
-      yargs-parser: 18.1.3
-    dev: true
-    optional: true
 
   /yargs@16.2.0:
     resolution: {integrity: sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==}
