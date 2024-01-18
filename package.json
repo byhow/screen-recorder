@@ -54,7 +54,7 @@
     "@electron-forge/maker-rpm": "^7.0.0",
     "@electron-forge/maker-squirrel": "^7.0.0",
     "@electron-forge/maker-zip": "^7.0.0",
-    "electron": "27.2.2",
+    "electron": "27.2.4",
     "eslint": "^8.0.0",
     "typescript": "^5.0.0",
     "@byhow/eslint-config": "^0.1.2"
